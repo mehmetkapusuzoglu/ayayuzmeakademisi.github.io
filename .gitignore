@@ -1,0 +1,26 @@
+# Build outputs
+Bin/
+*.dll
+*.pdb
+*.refresh
+
+# Visual Studio / .NET
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Optional: Document files (uncomment if you don't want to track .doc files)
+# *.doc
+

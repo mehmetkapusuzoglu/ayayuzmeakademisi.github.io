@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Paneli - Ankara Yüzme Akademisi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div id="loginPage" class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1><i class="fa fa-lock"></i> Admin Girişi</h1>
+                <p>Ankara Yüzme Akademisi Yönetim Paneli</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Kullanıcı Adı</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-primary">Giriş Yap</button>
+                <div id="loginError" class="error-message" style="display: none;"></div>
+            </form>
+        </div>
+    </div>
+
+    <div id="adminPanel" class="admin-panel" style="display: none;">
+        <header class="admin-header">
+            <div class="admin-header-inner">
+                <h1><i class="fa fa-cog"></i> Yönetim Paneli</h1>
+                <div class="admin-actions">
+                    <a href="index.html" target="_blank" class="btn-secondary"><i class="fa fa-external-link"></i> Siteyi Görüntüle</a>
+                    <button id="logoutBtn" class="btn-secondary"><i class="fa fa-sign-out"></i> Çıkış</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <div class="admin-sidebar">
+                <nav class="admin-nav">
+                    <a href="#hero" class="nav-item active" data-section="hero">
+                        <i class="fa fa-home"></i> Hero Bölümü
+                    </a>
+                    <a href="#about" class="nav-item" data-section="about">
+                        <i class="fa fa-info-circle"></i> Hakkımızda
+                    </a>
+                    <a href="#programs" class="nav-item" data-section="programs">
+                        <i class="fa fa-graduation-cap"></i> Programlar
+                    </a>
+                    <a href="#announcements" class="nav-item" data-section="announcements">
+                        <i class="fa fa-bullhorn"></i> Duyurular
+                    </a>
+                    <a href="#team" class="nav-item" data-section="team">
+                        <i class="fa fa-users"></i> Ekip
+                    </a>
+                    <a href="#contact" class="nav-item" data-section="contact">
+                        <i class="fa fa-envelope"></i> İletişim
+                    </a>
+                    <a href="#gallery" class="nav-item" data-section="gallery">
+                        <i class="fa fa-picture-o"></i> Fotoğraf Yönetimi
+                    </a>
+                </nav>
+            </div>
+
+            <div class="admin-content">
+                <!-- Hero Section -->
+                <section id="heroSection" class="admin-section">
+                    <h2>Hero Bölümü</h2>
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        <input type="text" id="heroTitle" value="Güçlü teknik, güvenli adımlar, yüksek performans" placeholder="Güçlü teknik, güvenli adımlar, yüksek performans">
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        <textarea id="heroDescription" rows="3" placeholder="150'den fazla lisanslı sporcumuzla...">150'den fazla lisanslı sporcumuzla, Ankara'nın kalbinde yüzme eğitimi, performans programları ve sporcu gelişimi.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Eyebrow Text (Üst Etiket)</label>
+                        <input type="text" id="heroEyebrow" value="Profesyonel yüzme ekibi" placeholder="Profesyonel yüzme ekibi">
+                    </div>
+
+                    <div class="admin-divider"></div>
+                    <h3>Hero Kartı (Başvuru)</h3>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Üst Etiket</label>
+                            <input type="text" id="heroCardEyebrowInput" value="Sezon Kaydı" placeholder="Sezon Kaydı">
+                        </div>
+                        <div class="form-group">
+                            <label>Durum Rozeti</label>
+                            <input type="text" id="heroCardBadgeInput" value="Aktif" placeholder="Aktif">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Kart Başlığı</label>
+                        <input type="text" id="heroCardTitleInput" value="2024-2025 Başvuruları" placeholder="2024-2025 Başvuruları">
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Madde 1</label>
+                            <input type="text" id="heroCardBullet1Input" value="3-6 yaş suyla tanışma ve güven" placeholder="3-6 yaş suyla tanışma ve güven">
+                        </div>
+                        <div class="form-group">
+                            <label>Madde 2</label>
+                            <input type="text" id="heroCardBullet2Input" value="7-12 yaş teknik geliştirme" placeholder="7-12 yaş teknik geliştirme">
+                        </div>
+                        <div class="form-group">
+                            <label>Madde 3</label>
+                            <input type="text" id="heroCardBullet3Input" value="Performans ve master grupları" placeholder="Performans ve master grupları">
+                        </div>
+                        <div class="form-group">
+                            <label>Madde 4</label>
+                            <input type="text" id="heroCardBullet4Input" value="Olimpik havuzda birebir analiz" placeholder="Olimpik havuzda birebir analiz">
+                        </div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>CTA Metni</label>
+                            <input type="text" id="heroCardCtaTextInput" value="Başvuru formunu indir" placeholder="Başvuru formunu indir">
+                        </div>
+                        <div class="form-group">
+                            <label>CTA Link</label>
+                            <input type="text" id="heroCardCtaLinkInput" value="aya-basvuru.doc" placeholder="aya-basvuru.doc">
+                        </div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Telefon Metni</label>
+                            <input type="text" id="heroCardPhoneTextInput" value="0 506 495 11 17" placeholder="0 506 495 11 17">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon Link (tel:...)</label>
+                            <input type="text" id="heroCardPhoneLinkInput" value="tel:+905064951117" placeholder="tel:+905064951117">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Güven / Ödül Metni</label>
+                        <input type="text" id="heroCardTrustInput" value="2015 Ankara Küme Yüzme Yarışları Şampiyonu" placeholder="2015 Ankara Küme Yüzme Yarışları Şampiyonu">
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="aboutSection" class="admin-section" style="display: none;">
+                    <h2>Hakkımızda</h2>
+                    <div class="form-group">
+                        <label>Ana Başlık</label>
+                        <input type="text" id="aboutTitle" placeholder="Çocuklar ve gençler için sürdürülebilir yüzme kültürü">
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        <textarea id="aboutDescription" rows="5" placeholder="Ankara Yüzme Akademisi, Doğan Alkan tarafından..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Vizyon</label>
+                        <textarea id="aboutVision" rows="3" placeholder="Sporu yaşam biçimi haline getiren..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Misyon</label>
+                        <textarea id="aboutMission" rows="3" placeholder="Disiplinli, sağlıklı ve mücadele gücü yüksek..."></textarea>
+                    </div>
+                </section>
+
+                <!-- Programs Section -->
+                <section id="programsSection" class="admin-section" style="display: none;">
+                    <h2>Programlar</h2>
+                    <div class="program-item">
+                        <h3>Başlangıç</h3>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea id="programStart" rows="2" placeholder="Suyu tanıma, adaptasyon..."></textarea>
+                        </div>
+                    </div>
+                    <div class="program-item">
+                        <h3>Teknik Gelişim</h3>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea id="programTech" rows="2" placeholder="6-12 yaş için dört stil tekniği..."></textarea>
+                        </div>
+                    </div>
+                    <div class="program-item">
+                        <h3>Performans</h3>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea id="programPerf" rows="2" placeholder="Seçme odaklı periyotlanmış antrenman..."></textarea>
+                        </div>
+                    </div>
+                    <div class="program-item">
+                        <h3>Master & Fitness</h3>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea id="programMaster" rows="2" placeholder="Yetişkinler için kondisyon..."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Announcements Section -->
+                <section id="announcementsSection" class="admin-section" style="display: none;">
+                    <h2>Duyurular</h2>
+                    <p class="admin-info">Duyuruları sürükleyerek sıralayın, silmek için çöp kutusu ikonuna tıklayın.</p>
+                    
+                    <div class="announcements-manager">
+                        <div class="announcements-toolbar">
+                            <button type="button" id="addAnnouncementBtn" class="btn-secondary">
+                                <i class="fa fa-plus"></i> Yeni Duyuru Ekle
+                            </button>
+                        </div>
+                        
+                        <div id="announcementsList" class="announcements-list">
+                            <!-- Announcements will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Team Section -->
+                <section id="teamSection" class="admin-section" style="display: none;">
+                    <h2>Ekip</h2>
+                    <div class="team-member">
+                        <h3>Doğan Alkan</h3>
+                        <div class="form-group">
+                            <label>Rol</label>
+                            <input type="text" id="teamDoganRole" placeholder="Kurucu & Baş Antrenör">
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea id="teamDoganDesc" rows="2" placeholder="4. Kademe antrenör..."></textarea>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <h3>Koray Karan</h3>
+                        <div class="form-group">
+                            <label>Rol</label>
+                            <input type="text" id="teamKorayRole" placeholder="Antrenör">
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea id="teamKorayDesc" rows="2" placeholder="3. Kademe antrenör"></textarea>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <h3>Hüseyin Ekinci</h3>
+                        <div class="form-group">
+                            <label>Rol</label>
+                            <input type="text" id="teamHuseyinRole" placeholder="Baş Antrenör">
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea id="teamHuseyinDesc" rows="2" placeholder="4. Kademe antrenör..."></textarea>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <h3>Oytun Buro</h3>
+                        <div class="form-group">
+                            <label>Rol</label>
+                            <input type="text" id="teamOytunRole" placeholder="Yardımcı Antrenör">
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea id="teamOytunDesc" rows="2" placeholder="2 yıldız bröveli yüzücü..."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contactSection" class="admin-section" style="display: none;">
+                    <h2>İletişim</h2>
+                    <div class="form-group">
+                        <label>Adres</label>
+                        <input type="text" id="contactAddress" placeholder="Ahlatlıbel, İncek Şht. Savcı Mehmet Selim Kiraz Blv No:129...">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="text" id="contactPhone" placeholder="0 506 495 11 17">
+                    </div>
+                    <div class="form-group">
+                        <label>E-posta</label>
+                        <input type="email" id="contactEmail" placeholder="info@ayayuzme.com">
+                    </div>
+                </section>
+
+                <!-- Gallery Section -->
+                <section id="gallerySection" class="admin-section" style="display: none;">
+                    <h2>Fotoğraf Yönetimi</h2>
+                    <p class="admin-info">Fotoğrafları sürükleyerek sıralayın, silmek için çöp kutusu ikonuna tıklayın.</p>
+                    
+                    <div class="gallery-manager">
+                        <div class="gallery-toolbar">
+                            <div class="form-group" style="flex: 1; margin: 0;">
+                                <label>Yeni Fotoğraf Yükle</label>
+                                <div style="display: flex; gap: 8px; align-items: flex-end;">
+                                    <div style="flex: 1;">
+                                        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                                        <label for="photoUpload" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; margin: 0;">
+                                            <i class="fa fa-upload"></i> Dosya Seç
+                                        </label>
+                                        <span id="selectedFileName" style="margin-left: 12px; color: var(--admin-text-muted); font-size: 14px;"></span>
+                                    </div>
+                                    <button type="button" id="addPhotoBtn" class="btn-secondary" disabled><i class="fa fa-plus"></i> Listeye Ekle</button>
+                                </div>
+                                <small style="color: var(--admin-text-muted); margin-top: 4px; display: block;">
+                                    <strong>Önemli:</strong> Dosyayı seçtikten sonra "Listeye Ekle" butonuna tıklayın. Dosya adı otomatik olarak alınacaktır. 
+                                    Dosyayı <strong>images/</strong> klasörüne manuel olarak yüklemeyi unutmayın!
+                                </small>
+                            </div>
+                        </div>
+                        
+                        <div id="galleryList" class="gallery-list">
+                            <!-- Photos will be loaded here -->
+                        </div>
+                    </div>
+                </section>
+
+                <div class="admin-actions-bottom">
+                    <button id="saveBtn" class="btn-primary"><i class="fa fa-save"></i> Değişiklikleri Kaydet</button>
+                    <button id="resetBtn" class="btn-secondary"><i class="fa fa-undo"></i> Sıfırla</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
+
