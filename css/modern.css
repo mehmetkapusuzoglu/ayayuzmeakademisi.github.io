@@ -998,6 +998,10 @@ img {
     display: none;
 }
 
+.sticky-text-mobile-short {
+    display: none;
+}
+
 .sticky-text-desktop {
     display: block;
 }
@@ -1257,13 +1261,17 @@ img {
     }
 
     .sticky-text-mobile {
-        display: block;
-        white-space: nowrap;
+        display: none !important;
+    }
+
+    .sticky-text-mobile-short {
+        display: block !important;
+        white-space: nowrap !important;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 11px;
-        line-height: 1.2;
-        margin: 0;
+        font-size: 10px !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
     }
 
     .sticky-inner .eyebrow {
@@ -1533,55 +1541,66 @@ img {
     }
 
     .sticky-inner {
-        padding: 6px 28px 6px 8px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 6px;
+        padding: 5px 24px 5px 6px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 5px !important;
     }
 
     .sticky-inner > div:first-child {
-        flex: 1;
-        min-width: 0;
-        text-align: left;
+        flex: 1 !important;
+        min-width: 0 !important;
+        margin: 0 !important;
     }
 
     .sticky-text-mobile {
-        font-size: 10px;
-        line-height: 1.2;
-        margin: 0;
+        display: none !important;
+    }
+
+    .sticky-text-mobile-short {
+        display: block !important;
+        font-size: 9px !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .sticky-inner .eyebrow {
-        display: none;
+        display: none !important;
     }
 
     .sticky-actions {
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 4px !important;
         flex-shrink: 0;
+        margin: 0 !important;
     }
 
     .sticky-actions .btn {
-        min-width: auto;
-        padding: 5px 8px;
-        font-size: 10px;
-        min-height: 28px;
-        white-space: nowrap;
+        min-width: auto !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 4px 7px !important;
+        font-size: 9px !important;
+        min-height: 26px !important;
+        height: 26px !important;
+        white-space: nowrap !important;
         flex-shrink: 0;
+        margin: 0 !important;
     }
 
     .sticky-close {
-        position: absolute;
-        top: 3px;
-        right: 3px;
-        width: 20px;
-        height: 20px;
-        min-width: 20px;
-        min-height: 20px;
-        font-size: 12px;
-        padding: 0;
+        position: absolute !important;
+        top: 2px !important;
+        right: 2px !important;
+        width: 18px !important;
+        height: 18px !important;
+        min-width: 18px !important;
+        min-height: 18px !important;
+        font-size: 11px !important;
+        padding: 0 !important;
     }
 
     .lightbox-inner {
@@ -1689,53 +1708,66 @@ img {
     }
 
     .sticky-inner {
-        padding: 5px 26px 5px 6px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 5px;
+        padding: 4px 22px 4px 5px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 4px !important;
     }
 
     .sticky-inner > div:first-child {
-        flex: 1;
-        min-width: 0;
+        flex: 1 !important;
+        min-width: 0 !important;
+        margin: 0 !important;
     }
 
     .sticky-text-mobile {
-        font-size: 9px;
-        line-height: 1.2;
-        margin: 0;
+        display: none !important;
+    }
+
+    .sticky-text-mobile-short {
+        display: block !important;
+        font-size: 8px !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .sticky-inner .eyebrow {
-        display: none;
+        display: none !important;
     }
 
     .sticky-actions {
-        display: flex;
-        flex-direction: row;
-        gap: 4px;
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 3px !important;
         flex-shrink: 0;
+        margin: 0 !important;
     }
 
     .sticky-actions .btn {
-        min-width: auto;
-        padding: 4px 7px;
-        font-size: 9px;
-        min-height: 26px;
-        white-space: nowrap;
+        min-width: auto !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 3px 6px !important;
+        font-size: 8px !important;
+        min-height: 24px !important;
+        height: 24px !important;
+        white-space: nowrap !important;
         flex-shrink: 0;
+        margin: 0 !important;
     }
 
     .sticky-close {
-        width: 18px;
-        height: 18px;
-        min-width: 18px;
-        min-height: 18px;
-        top: 2px;
-        right: 2px;
-        font-size: 11px;
-        padding: 0;
+        position: absolute !important;
+        top: 1px !important;
+        right: 1px !important;
+        width: 16px !important;
+        height: 16px !important;
+        min-width: 16px !important;
+        min-height: 16px !important;
+        font-size: 10px !important;
+        padding: 0 !important;
     }
 }
 
