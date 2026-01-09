@@ -939,6 +939,17 @@ img {
     display: block;
 }
 
+/* Hide sticky CTA on mobile devices */
+@media (max-width: 960px) {
+    .sticky-cta {
+        display: none !important;
+    }
+    
+    .sticky-cta.show {
+        display: none !important;
+    }
+}
+
 .sticky-inner {
     display: grid;
     grid-template-columns: 1fr auto auto;
